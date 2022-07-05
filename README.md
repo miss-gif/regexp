@@ -31,8 +31,8 @@ const str = `
 010-1234-1234
 abc@naver.com
 https://www.omdbapi.com/?apikey=7035c60c&s=frozen
-Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
-aaabbbcccdddd est EST
+"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+abbcccdddd
 `;
 ```
 
@@ -54,13 +54,24 @@ aaabbbcccdddd est EST
 
 ## 패턴 (표현)
 
-| 패턴       | 설명                                          |
-| ---------- | --------------------------------------------- |
-| ^ab        | 줄(Line)의 시작에 있는 ab와 일치              |
-| ab$        | 줄(Line)의 끝에 있는 ab와 일치                |
-| .          | 임의의 한 문자와 일치                         |
-| a&verbar;b | a 또는 b와 일치, 인덱스가 작은 것을 우선 반환 |
-| ab?        | b가 없거나 b와 일치                           |
-| {3}        | 3개 연속 일치                                 |
-| {3,}       | 3개 이상 연속 일치                            |
-| {3,5}      | 3개 이상 5개 이하 연속 일치                   |
+| 패턴       | 설명                                                        |
+| ---------- | ----------------------------------------------------------- |
+| ^ab        | 줄(Line)의 시작에 있는 ab와 일치                            |
+| ab$        | 줄(Line)의 끝에 있는 ab와 일치                              |
+| .          | 임의의 한 문자와 일치                                       |
+| a&verbar;b | a 또는 b와 일치, 인덱스가 작은 것을 우선 반환               |
+| ab?        | b가 없거나 b와 일치                                         |
+| {3}        | 3개 연속 일치                                               |
+| {3,}       | 3개 이상 연속 일치                                          |
+| {3,5}      | 3개 이상 5개 이하 연속 일치                                 |
+| [abc]      | a 또는 b 또는 c                                             |
+| [a-z]      | a부터 z 사이의 문자 구간에 일치(영어 소문자)                |
+| [A-Z]      | A부터 Z 사이의 문자 구간에 일치(영어 대문자)                |
+| [0-9]      | 0부터 9 사이의 문자 구간에 일치(숫자)                       |
+| [가-힣]    | 가부터 힣 사이의 문자 구간에 일치(한글)                     |
+| \w         | 63개 문자(Word, 영문 대소문자 52개 + 숫자 10개 + \_)에 일치 |
+| \b         | 63개 문자에 일치하지 않는 문자 경계(boundary)               |
+| d          | 숫자(Digit)에 일치                                          |
+| \s         | 공백(Space, Tab 등)에 일치                                  |
+| (?=)       | 앞쪽 일치(Lookahead)                                        |
+| (?<=)      | 뒤쪽 일치(Lookbehind)                                       |
